@@ -1,3 +1,18 @@
+/*
+    catmullrom曲線
+    使い方
+    catmullrom ctmr(true); trueだと始点と終点を滑らかにつなぐことができる
+    ctmr.addpoint(vec);
+    or
+    ctmr.addpoint(x,y); 点の追加(後ろにどんどん)
+    ctmr.getx(),ctmr.gety(); 点の座標の配列(std::vector<double>)
+    ctmr.getresult(time); その時間の座標をx,yの組で返す
+    ctmr.calc() 仮装
+
+    いつかやること
+    演算子いじってもう少し式を見やすくする
+*/
+
 #ifndef IG_CATMULLROM_H_
 #define IG_CATMULLROM_H_
 
