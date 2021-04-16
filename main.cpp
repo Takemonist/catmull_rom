@@ -27,13 +27,11 @@ int main(int argc, char *argv[]) {
         tmp = gen.getXY(t);
         x.push_back(tmp.x);
         y.push_back(tmp.y);
-        std::cout << "x:" << tmp.x << " " << "y:" << tmp.y << " ";
-        fprintf(dat,"x:%.5lf y:%.5lf ",tmp.x,tmp.y);
+        fprintf(dat,"x:%.4lf y:%.4lf ",tmp.x,tmp.y);
         tmp = gen.getLV(t);
         l.push_back(tmp.x);
         v.push_back(tmp.y);
-        std::cout<< "l:" << tmp.x << " " << "v:" << tmp.y << std::endl;
-        fprintf(dat,"v:%.5lf\n",tmp.y);
+        fprintf(dat,"v:%.4lf\n",tmp.y);
     }
     fclose(dat);
     int k = 0;
