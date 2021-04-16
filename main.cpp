@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
         x.push_back(tmp.x);
         y.push_back(tmp.y);
         std::cout << "x:" << tmp.x << " " << "y:" << tmp.y << " ";
-        fprintf(dat,"x:%.5lf y:%.5lf",tmp.x,tmp.y);
+        fprintf(dat,"x:%.5lf y:%.5lf ",tmp.x,tmp.y);
         tmp = gen.getLV(t);
         l.push_back(tmp.x);
         v.push_back(tmp.y);
