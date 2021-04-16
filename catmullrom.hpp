@@ -1,12 +1,3 @@
-/*
-To do:
-    f(t)実装 v
-    df(t)/dtを実装 v
-    Lを計算できるようにする
-    vlグラフでキャットムルのグラフを出せるようになる
-*/
-
-
 #ifndef IG_CATMULLROM_HPP_
 #define IG_CATMULLROM_HPP_
 
@@ -119,6 +110,11 @@ public:
         }
         return ret;
     }
+    void hoge(int l){
+        int i = l;
+        std::cout<< 3*(2*p[i]-2*p[i+1]+v[i]+v[i+1]).x << " " << 2*(-3*p[i]+3*p[i+1]-2*v[i]-v[i+1]).x << " " << v[i].x << std::endl;
+        std::cout<< 3*(2*p[i]-2*p[i+1]+v[i]+v[i+1]).y << " " << 2*(-3*p[i]+3*p[i+1]-2*v[i]-v[i+1]).y << " " << v[i].y << std::endl;
+    }
     Point<double> getdfdt(double time){
         Point<double> ret;
         int n = points-1;
@@ -133,6 +129,27 @@ public:
             ret = 3*(2*p[i]-2*p[i+1]+v[i]+v[i+1])*t*t
                 + 2*(-3*p[i]+3*p[i+1]-2*v[i]-v[i+1])*t
                 + v[i];
+        }
+        return ret;
+    }
+    Point<double> getftdt(double time){
+        Point<double> ret;
+        int n = points-1;
+        int i = (int)time;
+        double t = time - i;
+        if(i == n){
+            ret = (2*p[i]-2*p[0]+v[i]+v[0])*t*t*t*t/4
+                + (-3*p[i]+3*p[0]-2*v[i]-v[0])*t*t*t/3
+                + v[i]*t*t/2
+                + p[i]*t
+                + p[0];
+        }
+        else{
+            ret = (2*p[i]-2*p[i+1]+v[i]+v[i+1])*t*t*t*t/4
+                + (-3*p[i]+3*p[i+1]-2*v[i]-v[i+1])*t*t*t/3
+                + v[i]*t*t/2
+                + p[i]*t
+                + p[0];
         }
         return ret;
     }
