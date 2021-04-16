@@ -34,8 +34,8 @@ int main(int argc, char *argv[]) {
         v.push_back(tmp.y);
         std::cout<< "l:" << tmp.x << " " << "v:" << tmp.y << std::endl;
         fprintf(dat,"v:%.5lf\n",tmp.y);
-        fclose(dat);
     }
+    fclose(dat);
     int k = 0;
     plt::plot(x,y);
     plt::plot(l,v);
