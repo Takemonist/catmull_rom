@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     FILE *dat;
     dat = fopen("route.dat","w");
 
-    for(double t = 0;t < n;t += delta){
+    for(double t = 0;t <= n;t += delta){
         tmp = gen.getXY(t);
         x.push_back(tmp.x);
         y.push_back(tmp.y);
