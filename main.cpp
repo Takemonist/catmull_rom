@@ -13,10 +13,10 @@ int main(int argc, char *argv[]) {
     double delta = atof(argv[1]);
     RouteGenerator gen;
     gen.AddPoint(0,0,0);
-    gen.AddPoint(5,3,2);
-    gen.AddPoint(7,7,8);
-    gen.AddPoint(13,2,3);
-    gen.AddPoint(20,6,0);
+    gen.AddPoint(0,1000,4);
+    gen.AddPoint(500,2000,7);
+    gen.AddPoint(0,1000,5);
+    gen.AddPoint(0,0,0);
     gen.Generate(delta);
     int n = 4;
     Point<double> tmp;
